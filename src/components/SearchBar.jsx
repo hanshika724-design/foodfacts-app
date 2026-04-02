@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./SearchBar.css";
 
 function SearchBar({ onSearch }) {
-  const [input, setInput] = useState("");
+  const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSearch(input);
+    onSearch(query);
   };
 
   return (
@@ -14,8 +14,8 @@ function SearchBar({ onSearch }) {
       <input
         type="text"
         placeholder="Search food..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
       <button type="submit">Search</button>
     </form>
